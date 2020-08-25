@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Sidebar 09</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='./sidebar/css/style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='./sidebar/css/bootstrap.min.css')}}">
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	        </button>
+        </div>
+        {% block content %}
+        {% endblock %}
+        <ul class="list-unstyled components mb-5">
+          <li class="active">
+            <a href="./text-summarization"><span class="fa fa-wrench mr-3"></span> Text Summarization</a>
+          </li>
+          <li>
+              <a href="#"><span class="fa fa-wrench mr-3 "></span> Topic Modeling</a>
+          </li>
+          <li>
+            <a href="#"><span class="fa fa-wrench mr-3"></span> Sentiment Analysis</a>
+          </li>
+          <li>
+            <a href="./repository"><span class="fa fa-database mr-3"></span> Repository</a>
+          </li>
+          <li>
+            <a href="#"><span class="fa fa-bar-chart mr-3"></span> Reports</a>
+          </li>
+          <li>
+            <a href="#"><span class="fa fa-thumbs-o-up mr-3"></span> Feed</a>
+          </li>
+          <li>
+            <a href="./profile"><span class="fa fa-user-o mr-3"></span> Profile</a>
+          </li>
+          <li>
+            <a href="#"><span class="fa fa-sign-out mr-3"></span> Sign Out</a>
+          </li>
+        </ul>
+
+    	</nav>
+
+        <!-- Page Content  -->
+      
+        <script src="js/jquery.min.js"></script>
+      <script src="js/popper.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/main.js"></script>
+
+      <div id="content" class="p-4 p-md-5 pt-5">
+        {% include "./includes/message.html" %}
+
+        <div class="md-form active-cyan active-cyan-2 mb-3">
+          <form action="users-search" method="POST">
+          <input name="search" class="form-control" type="text" placeholder="Search Users" aria-label="Search">
+          </form>
+        </div>
+        <br>
+        {% block body %}
+        {% endblock %}
+      </div>
+		</div>
+  
+  </body>
+</html>

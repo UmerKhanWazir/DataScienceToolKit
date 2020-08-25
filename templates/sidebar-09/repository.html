@@ -1,0 +1,35 @@
+{% extends "./sidebar-09/index.html" %}
+
+{% block content %}
+  <div class="img bg-wrap text-center py-4" style="background-image: url(/static/sidebar/images/{{c}});">
+    <div class="user-logo">
+      <div class="img" style="background-image: url(/static/sidebar/images/{{p}});"></div>
+      <h3>{{n}}</h3>
+    </div>
+  </div>
+{% endblock %}
+
+{% block body %}
+  <form method="POST" action="/upload-file"  enctype="multipart/form-data">
+  <input type="file" name="fileToUpload" id="fileToUpload">
+  <input type="submit" value="save" name="submit">
+  </form>
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+  {% for item in path %}
+  <tr>
+    <td><a href="/view-file/{{item[0]}}">{{item[0]}}</a></td>
+    <td><button id="{{item[0]}}" type="button" class="btn btn-info">Delete</button>
+    <script type="text/javascript">
+        document.getElementById("{{item[0]}}").onclick = function () {
+            location.href = "/delete-file/{{item[0]}}";
+        };
+    </script>
+    </td><br><br>
+  </tr>
+{% endfor %}
+{% endblock %}

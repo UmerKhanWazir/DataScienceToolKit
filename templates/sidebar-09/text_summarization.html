@@ -1,0 +1,34 @@
+{% extends "./sidebar-09/index.html" %}
+
+{% block content %}
+  <div class="img bg-wrap text-center py-4" style="background-image: url(/static/sidebar/images/{{c}});">
+    <div class="user-logo">
+      <div class="img" style="background-image: url(/static/sidebar/images/{{p}});"></div>
+      <h3>{{n}}</h3>
+    </div>
+  </div>
+{% endblock %}
+
+{% block body %}
+  <form method="POST" action="/upload-file"  enctype="multipart/form-data">
+  <input type="file" name="fileToUpload" id="fileToUpload">
+  <input type="submit" value="Submit file for text-summarization" name="submit">
+  </form>
+  <br>
+
+  <button id="myButton" type="button" class="btn btn-info">Upload From Repository</button>
+  <script type="text/javascript">
+      document.getElementById("myButton").onclick = function () {
+          location.href = "/show-repository";
+      };
+  </script>
+   <br>
+   <br>
+
+  <form method="POST" action="web-scraping"  enctype="multipart/form-data">
+    <input placeholder="paste url here..." type="text" name="url" id="web-scraping">
+    <input type="submit" value="Submit" name="submit">
+  </form>
+  <br>
+  <textarea  placeholder="Type something, web scraping or upload file..." cols="132" rows="20">{{ page }}</textarea>
+{% endblock %}

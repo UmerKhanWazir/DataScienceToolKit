@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Signup Form</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="{{url_for('static', filename='./authentication/images/icons/favicon.ico')}}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='./authentication/vendor/bootstrap/css/bootstrap.min.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='./authentication/fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='./authentication/fonts/iconic/css/material-design-iconic-font.min.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='./authentication/vendor/animate/animate.css')}}">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='./authentication/vendor/css-hamburgers/hamburgers.min.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='./authentication/vendor/animsition/css/animsition.min.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='./authentication/vendor/select2/select2.min.css')}}">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='./authentication/vendor/daterangepicker/daterangepicker.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='./authentication/css/util.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='./authentication/css/main.css')}}">
+<!--===============================================================================================-->
+</head>
+<body>
+	{% include "./includes/message.html" %}
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url('./static/authentication/images/bg-01.jpg');">
+			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+				<form action=""  class="login100-form validate-form" method="POST">
+					<span class="login100-form-title p-b-49">
+						Signup
+					</span>
+
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "First Name is required">
+						<span class="label-input100">Full Name</span>
+						<input class="input100" type="text" name="fullname" >
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "First Name is required">
+						<span class="label-input100">User Name</span>
+						<input class="input100" type="text" name="username" >
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "Profession is required">
+						<span class="label-input100">Profession</span>
+						<input class="input100" type="text" name="profession" >
+					</div>					
+
+					<div class="wrap-input100 validate-input" data-validate="Password is required">
+						<span class="label-input100">Password</span>
+						<input class="input100" type="password" name="password" >
+					</div>
+					<br>
+					<div class="wrap-input100 validate-input" data-validate="Confirm Password is required">
+						<span class="label-input100">Confirm Password</span>
+						<input class="input100" type="password" name="confirmpassword" >
+					</div>
+					
+					<br>
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn">
+								Signup
+							</button>
+						</div>
+					</div>
+
+					<div class="txt1 text-center p-t-54 p-b-20">
+						<span>
+							Or Sign Up Using
+						</span>
+					</div>
+
+					<div class="flex-c-m">
+						<a href="./github-login" class="login100-social-item bg1">
+							<i class="fa fa-github"></i>
+						</a>
+
+						<a href="./google-login" class="login100-social-item bg3">
+							<i class="fa fa-google"></i>
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+	
+</body>
+</html>

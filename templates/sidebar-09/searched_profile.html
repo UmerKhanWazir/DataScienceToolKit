@@ -1,0 +1,25 @@
+{% extends "./sidebar-09/index.html" %}
+
+{% block content %}
+  <div class="img bg-wrap text-center py-4" style="background-image: url(/static/sidebar/images/{{c}});">
+    <div class="user-logo">
+      <div class="img" style="background-image: url(/static/sidebar/images/{{p}});"></div>
+      <h3>{{n}}</h3>
+    </div>
+  </div>
+{% endblock %}
+
+{% block body %}
+    <div class="img bg-wrap text-center py-4" style="background-image: url(/static/sidebar/images/{{u[6]}});">
+        <div class="user-logo">
+        <div class="img" style="background-image: url(/static/sidebar/images/{{u[5]}});"></div>
+        <h3>{{u[1]}}</h3>
+        </div>
+    </div>
+    {% for item in path %}
+        
+        <tr>
+            <td><a href="/view-file/{{item[0]}}">{{item[0]}}</a></td><br>
+        </tr>
+    {% endfor %}
+{% endblock %}

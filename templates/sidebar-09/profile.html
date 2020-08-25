@@ -1,0 +1,24 @@
+{% extends "./sidebar-09/index.html" %}
+
+{% block content %}
+  <div class="img bg-wrap text-center py-4" style="background-image: url(/static/sidebar/images/{{c}});">
+    <div class="user-logo">
+      <div class="img" style="background-image: url(/static/sidebar/images/{{p}});"></div>
+      <h3>{{n}}</h3>
+    </div>
+  </div>
+{% endblock %}
+
+{% block body %}
+<h3>Change Profile Picture:</h3><br>
+<form method="POST" action="profile-picture"  enctype="multipart/form-data">
+  <input type="file" name="profile" id="fileToUpload">
+  <input type="submit" value="Submit" name="submit">
+</form>
+<br>
+<h3>Change Cover Picture:</h3><br>
+<form method="POST" action="cover"  enctype="multipart/form-data">
+  <input type="file" name="cover" id="fileUpload">
+  <input type="submit" value="Submit" name="submit">
+</form>
+{% endblock %}
